@@ -1,0 +1,38 @@
+<div *ngIf=(isAdmin)>
+
+<nav  class="navbar navbar-light">
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="navbar-brand"  routerLink ="/adminHome">NewsMonkey Admin Portal</a>
+        <div  class="alert alert-success">
+            Username: {{username}} | Email: {{email}}
+         </div>
+         <div class="alert alert-light">
+                <ul class="nav justify-content-end"class="nav nav-tabs">
+                    <li class="nav-item">
+                        <p>CONTROL PANEL</p> 
+                    </li>
+
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="btn btn-outline-dark my-2 my-sm-0"  routerLink="/addnews">Add News</a>
+                    </li>
+                               
+                    <li class="nav-item" routerLinkActive="active">
+ 
+                        <a class="btn btn-outline-dark my-2 my-sm-0"   routerLink="/newslist">News List</a>
+                    </li>
+
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="btn btn-outline-dark my-2 my-sm-0"  routerLink="/">Customer Home</a>
+                    </li>
+
+                    <li class="nav-item" routerLinkActive="active">
+                        <a  class="btn btn-outline-dark my-2 my-sm-0" (click)="logout()">Logout</a>
+                    </li>
+                </ul> 
+            </div>
+</nav>
+
+</div>
+
+<div *ngIf=(!isAdmin)>
+  FORBIDDEN ACCESS!!!
+</div>

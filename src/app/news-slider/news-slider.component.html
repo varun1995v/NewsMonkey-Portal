@@ -1,0 +1,33 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" style="max-height: 500px; min-height: 200px;">
+    <div class="carousel-item active" (click)="goToUrl(newsList[0]?.url)">
+      <img src="{{newsList[0]?.imageUrl}}"  class="d-block w-100" alt="{{newsList[0]?.title}}">
+      <div class="carousel-caption d-md-block">
+        <h5>{{newsList[0]?.title}}</h5>
+        <p>{{newsList[0]?.description}}</p>
+      </div>
+    </div>
+    <div class="carousel-item" *ngIf="newsList.length >= 2" (click)="goToUrl(newsList[1]?.url)">
+      <img src="{{newsList[1]?.imageUrl}}" class="d-block w-100" alt="{{newsList[1]?.title}}">
+      <div class="carousel-caption d-md-block">
+        <h5>{{newsList[1]?.title}}</h5>
+        <p>{{newsList[1]?.description}}</p>
+      </div>
+    </div>
+    <div class="carousel-item" *ngIf="newsList.length >= 3" (click)="goToUrl(newsList[2]?.url)">
+      <img src="{{newsList[2]?.imageUrl}}"  class="d-block w-100" alt="{{newsList[2]?.title}}">
+      <div class="carousel-caption d-md-block">
+        <h5>{{newsList[2]?.title}}</h5>
+        <p>{{newsList[2]?.description}}</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" data-target="#carouselExampleControls" role="button" data-slide="prev" style="min-height: 30px;">
+    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" data-target="#carouselExampleControls" role="button" data-slide="next" style="min-height: 30px;">
+    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

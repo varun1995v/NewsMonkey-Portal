@@ -1,0 +1,47 @@
+<div class="text-center" *ngIf="!chatBox">
+  <button class="btn btn-info btn-rounded" (click)="getChatBox()">Open Chat Box</button>
+</div>
+<div class="text-center" *ngIf="chatBox">
+    <button class="btn btn-info btn-rounded" (click)="getChatBox()">Close Chat Box</button>
+  </div>
+
+<div class="chat_window" *ngIf="chatBox">
+    <div class="top_menu text-center">
+        <div class="buttons">
+        </div>
+        <div class="username">
+            Enter Username:
+            <input class="username_input" size="15" [(ngModel)]="username">
+            <button (click)="enterUser()" class="button">Submit</button>
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="userSuccess">
+            Username Created Successfully
+        </div>
+        <div class="title"> Wanna talk to fellow Visitors?</div>
+        <div class="users text-center"> Active Users: {{users}}</div>
+    </div>
+    <ul  style="list-style-type:none;" class="chat-messages-show-list" id="message-list"></ul>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+            <input class="message_input" [(ngModel)]="message" placeholder="Type your message here..." />
+        </div>
+        <div class="send_message">
+            <div class="icon"></div>
+            <div class="text" (click)="sendMessage()" >Send</div>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="userError">
+            ERROR: Set a username first
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="emptyMessage">
+            ERROR: Message cant be empty
+        </div>
+    </div>
+</div>
+<div class="message_template">
+    <li class="message">
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+            <div class="text"></div>
+        </div>
+    </li>
+</div>

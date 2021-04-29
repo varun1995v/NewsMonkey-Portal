@@ -1,0 +1,58 @@
+<div class="container-fluid px-1 px-sm-3 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="row card0">
+      <div class="card1 col-lg-8 col-md-7">
+
+        <div class="text-center"> <img class="image mt-5" src="https://i.imgur.com/M8VyA2h.png"> </div>
+        <div class="row px-3 mt-3 mb-3">
+          <h1 class="large-font mr-3">{{ this.weatherData?.main.temp }} &#176;F&ensp;</h1>
+          <div class="d-flex flex-column mr-3">
+
+            <h1 class="large-font mr-3">{{ this.weatherData?.name }}</h1>
+          </div>
+
+        </div>
+      </div>
+      <div class="card2 col-lg-4 col-md-5">
+
+        <div class="mr-5">
+          <div class="row px-3">
+          </div>
+
+          <div class="line my-5"></div>
+          <h2 class="ml-auto light-text"><i>Weather Details</i></h2><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Climate:</i></h6>
+            <h6 class="ml-auto light-text"><i>{{ this.weatherData?.weather[0].description}}</i></h6>
+           
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Feels Like:</i></h6>
+            <h6 class="ml-auto light-text"> {{ this.weatherData?.main.feels_like}}&#176;F</h6>
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Humidity:</i></h6>
+            <h6 class="ml-auto light-text">{{ this.weatherData?.main.humidity }}%</h6>
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Wind:</i></h6>
+            <h6 class="ml-auto light-text">{{ this.weatherData?.wind.speed }}mph</h6>
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Pressure: </i></h6>
+            <h6 class="ml-auto light-text">{{ this.weatherData?.main.pressure }}</h6>
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Min Temp: </i></h6>
+            <h6 class="ml-auto light-text">{{ this.weatherData?.main.temp_min }}&#176;F</h6>
+          </div><br><br>
+          <div class="row px-3">
+            <h6 class="light-text"><i>Max Temp: </i></h6>
+            <h6 class="ml-auto light-text">{{ this.weatherData?.main.temp_max }}&#176;F</h6>
+          </div><br>
+          <div class="line mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
